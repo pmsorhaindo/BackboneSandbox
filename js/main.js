@@ -1,8 +1,10 @@
 require.config({
+    urlArgs: 'cb=' + Math.random(),
 	paths:{
 		jquery: 'libs/jquery/jquery-1.11.1',
 		underscore: 'libs/underscore/underscore',
-		backbone: 'libs/backbone/backbone'
+		backbone: 'libs/backbone/backbone',
+        specs: '../specs/'
 	}
 })
 
