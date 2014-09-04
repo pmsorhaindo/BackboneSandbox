@@ -14,8 +14,15 @@ define([
             this.collection = new UserCollection();
             this.collection.add({ name: "Mikey" });
             
-            var compiledTemplate = _.template(userListTemplate, { users: this.collection.models });
-            this.$el.html(compiledTemplate);
+            console.log(this.collection.models);
+            
+            var data = {
+                users: this.collection.models,
+                _: _ 
+            };
+          
+            var compiledTemplate = _.template( userListTemplate);
+            this.$el.html( compiledTemplate(data) ); 
         }
     });
     return UserListView;

@@ -9,9 +9,13 @@
 <body>
 
 	<div id="container">
-		<div id="menu"></div>
+		<div id="menu"><a href="/index.html">Index</a><br /><a href="#/projects">Projects</a></div>
 		<div id="content">
-            <a class="btn"><%= users.get(0).name %></a>
+        <ul>
+            <% _.each(users, function(user){ %>
+                   <li><a href='<%= user.get("name") %>'><%= user.get("name") %></a></li> 
+                <% }); %>
+            </ul>
         </div>
 	</div>
 

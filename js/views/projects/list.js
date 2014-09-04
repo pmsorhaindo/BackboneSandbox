@@ -16,8 +16,8 @@ define([
       this.collection.add({ name: "Brandwatch" });
       
       // Compile the template using Underscores micro-templating
-      var compiledTemplate = _.template( projectsListTemplate, { projects: this.collection.models });
-      this.$el.html(compiledTemplate);
+      var compiledTemplate = _.template( projectsListTemplate );
+      this.$el.html(compiledTemplate({ projects: this.collection.models }));
     }
   });
   // Returning instantiated views can be quite useful for having "state"
